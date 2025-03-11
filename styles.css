@@ -70,8 +70,7 @@ body {
     font-size: 3em;
     color: red;
     position: absolute;
-    left: 50%;
-    bottom: 0%;
+    animation: helicopter_flight 10s infinite linear;
 }
 
 /** Exercise 1.4 - add animation properties to each of the following classes (see guidance) **/
@@ -96,4 +95,134 @@ body {
     position:absolute;
     left:100%;
     bottom:0%;
+}
+
+.background_slide_left{
+    animation: background_slide 3s infinite linear
+}
+
+.turbulence{
+    animation: plane_turbulence 1s infinite linear;
+}
+
+@keyframes background_slide{
+    from{
+        left:0%;
+    }
+    to{
+        left:-50%;
+    }
+}
+
+@keyframes plane_turbulence{
+    0%{
+        top:50%
+    }
+    25%{
+        top:55%
+    }
+    50%{
+        top:50%
+    }
+    75%{
+        top:45%
+    }
+    100%{
+        top:50%
+    }
+}
+
+@keyframes helicopter_flight{
+    0%{
+        left:0%;
+        bottom: 0%;
+    }
+
+    20%{
+        bottom: 85%
+    }
+    40%{
+        left:0%
+    }
+    60%{
+        left:88%
+    }
+    80%{
+        left:88%;
+        bottom:85%
+    }
+    90%{
+        left:88%;
+        bottom: 0%
+    }
+    100%{
+        left:88%;
+        bottom: 0%
+    }
+}
+
+.sun-container{
+    animation: sun_moon_movement 10s infinite linear;
+}
+
+.day_night{
+    animation: day_night_cycle 10s infinite linear;
+}
+
+.moon{
+    animation: moon_rotation 5s infinite linear;
+}
+
+.sun{
+    animation: sun_colour 5s infinite linear;
+}
+
+@keyframes sun_moon_movement{
+    from{
+        transform: rotate(0deg);
+    }    
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes day_night_cycle{
+    0%{
+        background-color: black;
+    }
+    5%{
+        background-color: skyblue;
+    }
+    35%{
+        background-color: skyblue;
+    }
+    55%{
+        background-color: black;
+    }
+    100%{
+        background-color: black;
+    }
+}
+
+@keyframes moon_rotation {
+    from{
+        transform: rotate(200deg);
+    }
+    to{
+        transform: rotate(20deg);
+    }
+}
+@keyframes sun_colour{
+    0%{
+        color: orange;
+    }
+    15%{
+        color: yellow;
+    }
+    70%{
+        color: yellow;
+    }
+    100%{
+        color: orange;
+    }
 }
